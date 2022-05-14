@@ -29,7 +29,7 @@ export default {
   },
   data(){
     return {
-      name: '안녕',
+      name: '안녕!',
       cc: true,
 
       radioCheck: '',
