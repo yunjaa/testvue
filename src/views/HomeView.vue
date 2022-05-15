@@ -17,19 +17,11 @@ export default {
   name: 'HomeView',
   components: {
     HelloWorld
-<<<<<<< Updated upstream
-  }, 
-  data: function() {
-    return {
-      msg: 'Welcome to Your Vue.js App',
-      name: 'aa',
-=======
   },
   data: function() {
   return {
       msg: 'Welcome to Your Vue.js App',
       name: 'workj',
->>>>>>> Stashed changes
       use: true
     };
   }
