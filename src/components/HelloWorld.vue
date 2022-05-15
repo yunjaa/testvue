@@ -3,6 +3,7 @@
     <h1>{{ msg }}</h1>
     <h2 v-if="use">{{ name }}</h2>
     <p>테스트 중입니다.</p>
+    <p>테스트 중입니다.</p>
   </div>
 </template>
 
