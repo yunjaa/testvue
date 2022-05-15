@@ -37,7 +37,7 @@ export default {
   props: {
     msg: String,
     name: String,
-    use:Boolean
+    use: Boolean
   }
 }
 </script>
