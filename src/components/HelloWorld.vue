@@ -6,7 +6,9 @@
     <p>테스트 중입니다.</p>
     <p>테스트 중입니다.</p>
     <p>테스트 중입니다.</p>
-    <cmText :type="2" :txt="txt" />
+
+    
+    <cmText :type="1" :txt="txt" />
   </div>
 </template>
 

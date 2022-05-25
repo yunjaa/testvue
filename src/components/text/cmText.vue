@@ -1,19 +1,33 @@
 <template>
-  <div :type="type">
-    {{ txt }}
-  </div>
+  <p class="basic" :class="txtClass">{{ txt }}</p>
 </template>
 <script>
-// import { cmText } from '@vue/cmText'
-
 export default {
   name: 'cmText',
   props: {
     txt: String,
     type: Number 
+  },
+  data () {
+    return {
+      txtClass:'basic-'+this.type
+    };
   }
 }
 </script>
-<style scoped>
-
+<style lang="scss">
+$txt-basic: #111;
+$txt-primary: blue;
+$txt-secondary: red;
+p {
+  &.basic{
+    color: $txt-basic;
+    &-1{
+      color: $txt-primary;
+    }
+    &-2{
+      color: $txt-secondary;
+    }
+  }
+}
 </style>
