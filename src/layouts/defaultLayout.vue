@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :class="classObject">
+  <div class="container">
     <defaultHeader></defaultHeader>
     <slot></slot>
     <defaultFooter></defaultFooter>
@@ -17,9 +17,8 @@ export default {
     defaultFooter
   },
   data: function() {
-  return {
-      classObject : [
-      ]
+    return {
+      
     };
   }
 }

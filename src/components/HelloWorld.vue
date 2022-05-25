@@ -1,51 +1,58 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2 v-if="use">{{ name }}</h2>
-    <p>테스트 중입니다.</p>
-    <p>테스트 중입니다.</p>
-    <p>테스트 중입니다.</p>
-    <p>테스트 중입니다.</p>
+    <cmTitle :type="1" :heading="heading" />
+      <p v-if="use">{{ name }}</p>
 
-    
-    <cmText :type="1" :txt="txt" />
+    <ul class="group-test">
+      <li>
+        <cmTitle :type="2" heading="이름" />
+        <cmText :type="primary" :txt="txt" />
+      </li>
+      <li>
+        <cmTitle :type="2" heading="전화" />
+        <cmText :type="2" :txt="tel" />
+      </li>
+    </ul>
+
   </div>
 </template>
 
 <script>
+import cmTitle from '@/components/text/cmTitle';
 import cmText from '@/components/text/cmText';
 
 export default {
   props: {
-    msg: String,
     name: String,
     use: Boolean
   },
-  components: { 
+  components: {
+    cmTitle,
     cmText
   },
   data () {
     return {
-      txt: '안녕~!'
+      heading: 'Hello, World!',
+      txt: 'workyj',
+      tel: '010-1234-5678'
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
+<style lang="scss">
+.group-test {
+  width:50%;
+  margin: 0 auto;
   padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+  border-bottom:1px solid gray;
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px 0;
+    border-top:1px solid gray;
+  }
+  .basic{margin:0;}
 }
 </style>

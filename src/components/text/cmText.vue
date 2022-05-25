@@ -6,7 +6,7 @@ export default {
   name: 'cmText',
   props: {
     txt: String,
-    type: Number 
+    type: String 
   },
   data () {
     return {
@@ -22,6 +22,7 @@ $txt-secondary: red;
 p {
   &.basic{
     color: $txt-basic;
+    &-primary,
     &-1{
       color: $txt-primary;
     }
