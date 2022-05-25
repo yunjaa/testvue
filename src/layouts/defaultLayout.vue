@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" :class="classObject">
     <defaultHeader></defaultHeader>
     <slot></slot>
     <defaultFooter></defaultFooter>
@@ -15,6 +15,12 @@ export default {
   components: {
     defaultHeader,
     defaultFooter
+  },
+  data: function() {
+  return {
+      classObject : [
+      ]
+    };
   }
 }
 </script>

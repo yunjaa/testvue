@@ -6,15 +6,26 @@
     <p>테스트 중입니다.</p>
     <p>테스트 중입니다.</p>
     <p>테스트 중입니다.</p>
+    <cmText :type="2" :txt="txt" />
   </div>
 </template>
 
 <script>
+import cmText from '@/components/text/cmText';
+
 export default {
   props: {
     msg: String,
     name: String,
     use: Boolean
+  },
+  components: { 
+    cmText
+  },
+  data () {
+    return {
+      txt: '안녕~!'
+    }
   }
 }
 </script>
