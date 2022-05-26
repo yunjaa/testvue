@@ -1,9 +1,6 @@
 <template>
   <div>
-    <h2 v-if="type === 1" :class="titleClass">{{ heading }}</h2>
-    <h3 v-if="type === 2" :class="titleClass">{{ heading }}</h3>
-    <h4 v-if="type === 3" :class="titleClass">{{ heading }}</h4>
-    <h5 v-if="type === 4" :class="titleClass">{{ heading }}</h5>
+    <h2 class="head" :class="getType(type)">{{ heading }}</h2>
   </div>
 </template>
 <script>
@@ -13,9 +10,13 @@ export default {
     heading: String,
     type: Number
   },
+  methods: {
+    getType() {
+      return 'head-'+this.type;
+    }
+  },
   data () {
     return {
-      titleClass:'head head-'+this.type
     };
   }
 }

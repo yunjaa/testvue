@@ -1,16 +1,20 @@
 <template>
-  <p class="basic" :class="txtClass">{{ txt }}</p>
+  <p class="basic" :class="getType(type)">{{ txt }}</p>
 </template>
 <script>
 export default {
   name: 'cmText',
   props: {
     txt: String,
-    type: String 
+    type: Number
+  },
+  methods: {
+    getType() {
+      return 'basic-'+this.type;
+    }
   },
   data () {
     return {
-      txtClass:'basic-'+this.type
     };
   }
 }
@@ -26,6 +30,7 @@ p {
     &-1{
       color: $txt-primary;
     }
+    &-secondary,
     &-2{
       color: $txt-secondary;
     }

@@ -1,16 +1,16 @@
 <template>
   <div class="hello">
-    <cmTitle :type="1" :heading="heading" />
-      <p v-if="use">{{ name }}</p>
+    <cmTitle :type="1" :heading="myInfo.heading" />
+    <p v-if="use">{{ name }}</p>
 
     <ul class="group-test">
       <li>
         <cmTitle :type="2" heading="이름" />
-        <cmText :type="primary" :txt="txt" />
+        <cmText :type="1" :txt="myInfo.txt" />
       </li>
       <li>
         <cmTitle :type="2" heading="전화" />
-        <cmText :type="2" :txt="tel" />
+        <cmText :type="2" :txt="myInfo.tel" />
       </li>
     </ul>
 
@@ -32,9 +32,11 @@ export default {
   },
   data () {
     return {
-      heading: 'Hello, World!',
-      txt: 'workyj',
-      tel: '010-1234-5678'
+      myInfo: {
+        heading: 'Hello, World!',
+        txt: 'workyj',
+        tel: '010-1234-5678'
+      }
     }
   }
 }
