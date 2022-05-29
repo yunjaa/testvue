@@ -1,21 +1,36 @@
 <template>
-  <p class="basic" :class="getType(type)">{{ txt }}</p>
+  <p
+    v-if="$slots.default"
+    class="basic"
+    :class="getType(type)"
+  >
+    <slot />
+  </p>
+  <p
+    v-else
+    class="basic"
+    :class="getType(type)"
+    v-html="text"
+  />
 </template>
 <script>
 export default {
-  name: 'cmText',
+  name: 'CmText',
   props: {
-    txt: String,
-    type: Number
-  },
-  methods: {
-    getType() {
-      return 'basic-'+this.type;
+    text: String,
+    type: {
+      type: Number,
+      default: 1
     }
   },
   data () {
     return {
     };
+  },
+  methods: {
+    getType() {
+      return 'basic-'+this.type;
+    }
   }
 }
 </script>

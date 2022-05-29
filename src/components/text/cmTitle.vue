@@ -1,23 +1,35 @@
 <template>
-  <div>
-    <h2 class="head" :class="getType(type)">{{ heading }}</h2>
-  </div>
+  <h2
+    v-if="$slots.default"
+    class="head"
+    :class="getType(type)"
+    v-html="text"
+  />
+  <h3
+    v-else
+    class="head"
+    v-html="text"
+  />
 </template>
 <script>
 export default {
-  name: 'cmTitle',
+  name: 'CmTitle',
   props: {
-    heading: String,
-    type: Number
-  },
-  methods: {
-    getType() {
-      return 'head-'+this.type;
+    text: String,
+    type: {
+      type: Number,
+      require: false,
+      default: 1
     }
   },
   data () {
     return {
     };
+  },
+  methods: {
+    getType() {
+      return 'head-'+this.type;
+    }
   }
 }
 </script>

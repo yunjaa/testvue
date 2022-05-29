@@ -1,19 +1,26 @@
 <template>
   <div class="hello">
-    <cmTitle :type="1" :heading="myInfo.heading" />
-    <p v-if="use">{{ name }}</p>
+    <cmTitle
+      :type="1"
+      :text="myInfo.heading"
+    />
 
     <ul class="group-test">
       <li>
-        <cmTitle :type="2" heading="이름" />
-        <cmText :type="1" :txt="myInfo.txt" />
+        <cmTitle text="<strong>이름</strong>입니다." />
+        <cmText>{{ myInfo.text }}</cmText>
       </li>
       <li>
-        <cmTitle :type="2" heading="전화" />
-        <cmText :type="2" :txt="myInfo.tel" />
+        <cmTitle
+          :type="2"
+          text="전화"
+        />
+        <cmText
+          :type="1"
+          :text="myInfo.tel"
+        />
       </li>
     </ul>
-
   </div>
 </template>
 
@@ -22,19 +29,16 @@ import cmTitle from '@/components/text/cmTitle';
 import cmText from '@/components/text/cmText';
 
 export default {
-  props: {
-    name: String,
-    use: Boolean
-  },
   components: {
     cmTitle,
     cmText
   },
+  props: { },
   data () {
     return {
       myInfo: {
         heading: 'Hello, World!',
-        txt: 'workyj',
+        text: 'workyj',
         tel: '010-1234-5678'
       }
     }
