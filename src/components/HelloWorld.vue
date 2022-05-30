@@ -21,17 +21,29 @@
         />
       </li>
     </ul>
+
+    <div class="btn-wrap">
+      <button @click="test('취소버튼 click!')">
+        취소
+      </button>
+      <cmButton
+        text="확인버튼"
+        @onClick="test('확인버튼 click!')"
+      />
+    </div>
   </div>
-</template>
+</template> 
 
 <script>
 import cmTitle from '@/components/text/cmTitle';
 import cmText from '@/components/text/cmText';
+import cmButton from '@/components/button/cmButton';
 
 export default {
   components: {
     cmTitle,
-    cmText
+    cmText,
+    cmButton,
   },
   props: { },
   data () {
@@ -41,6 +53,11 @@ export default {
         text: 'workyj',
         tel: '010-1234-5678'
       }
+    }
+  },
+  methods: {
+    test(msg) {
+      console.log(msg);
     }
   }
 }
